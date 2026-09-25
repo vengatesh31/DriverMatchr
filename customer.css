@@ -1,0 +1,641 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: sans-serif;
+}
+
+header{
+    height: 70px;
+    width: 100%;
+    background-color: darkcyan;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    animation: header 2s ease-in-out;
+}
+
+@keyframes header{
+    0%{
+        transform: translateY(-70px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+header h1{
+    color: #1a365d;
+}
+
+header h1>span{
+    color: #0077cc;
+}
+
+header ul>li{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+header ul>li>a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+header ul>li>a:hover{
+    color: navy;
+}
+
+.login-btn{
+    
+    color: darkcyan;
+    /* border: 2px solid red; */
+    border: none;
+
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+
+
+
+.main{
+    min-height: 620px;
+
+    padding: 80px 8%;
+
+    display: flex;
+    align-items: center;
+
+    background-image:url(./images/1.png);
+    background-size: cover;
+}
+
+.main-content{
+    max-width: 650px;
+}
+
+.small-title{
+    color: darkcyan;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+    margin-bottom: 3%;
+}
+
+.main h1 {
+    font-size: 56px;
+
+    line-height: 1.15;
+
+    color: #111827;
+
+    margin-bottom: 5%;
+}
+
+.main h1 span {
+    display: block;
+    color: darkcyan;
+}
+
+.main-paragraph{
+    color: #6b7280;
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+.main-button {
+    padding: 14px 30px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color:darkcyan;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    background-color: rgb(1, 109, 109);
+    transform: translateY(-3px);
+}
+
+
+
+
+section {
+    padding: 90px 8%;
+}
+
+.section-title {
+    color: rgb(4, 207, 207);
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+section h2 {
+    color: #111827;
+
+    font-size: 38px;
+
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+}
+
+
+
+
+.about-section {
+    
+
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.about-content p:not(.section-title) {
+    color: #6b7280;
+
+    max-width: 700px;
+
+    margin: 10px auto;
+}
+
+
+
+.story-section {
+    background-color: rgb(227, 248, 248);
+    text-align: center;
+}
+
+.story-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.story-content p:not(.section-title) {
+    color: #6b7280;
+    max-width: 700px;
+    margin: 10px auto;
+}
+
+
+.service{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    height: 260px;
+    background: #ffffff;
+    border: 1px solid #e3e6e4;
+    border-radius: 28px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-content h2 {
+    font-size: 22px;
+    color: #172027;
+    margin-bottom: 18px;
+}
+
+.card-content p {
+    width: 260px;
+    color: #737b82;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ICON */
+
+.card-icon {
+    position: absolute;
+    right: 25px;
+    bottom: 22px;
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 2s ease;
+}
+
+.card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* ONE WAY */
+
+.card:hover .arrow {
+    transform: translateX(15px);
+}
+
+
+/* HOURLY */
+
+.card:hover .clock {
+    transform: translateX(10px) rotate(360deg);
+}
+
+
+/* AIRPORT */
+
+.card:hover .airplane {
+    transform: translate(15px, -10px) rotate(-8deg);
+}
+
+
+/* FULL DAY */
+
+.card:hover .fullday {
+    transform: translateX(12px) scale(1.1);
+}
+
+
+/* CORPORATE */
+
+.card:hover .corporate {
+    transform: translateX(12px);
+}
+
+
+/* LONG DISTANCE */
+
+.card:hover .globe {
+    transform: translateX(10px) rotate(20deg);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+.approach-section {
+    background-color: #f9fafb;
+
+    text-align: center;
+}
+
+.approach-container {
+    margin-top: 45px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.approach-card {
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    text-align: left;
+
+    border-left: 4px solid darkcyan;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s;
+}
+
+.approach-card:hover {
+    transform: translateY(-6px);
+}
+
+.approach-card span {
+    color: darkcyan;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.approach-card h3 {
+    color: #111827;
+
+    margin: 10px 0;
+}
+
+.approach-card p {
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+.why-section {
+    background-color: #111827;
+
+    text-align: center;
+}
+
+.why-section h2 {
+    color: white;
+}
+
+.why-container {
+    margin-top: 45px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.why-card {
+    padding: 30px 20px;
+
+    background-color: #1f2937;
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.why-card:hover {
+    transform: translateY(-7px);
+
+    background-color: #273449;
+}
+
+.why-icon {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: darkcyan;
+
+    color: white;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.why-card h3 {
+    color: white;
+
+    margin-bottom: 10px;
+}
+
+.why-card p {
+    color: #d1d5db;
+
+    font-size: 14px;
+}
+
+
+
+
+.how-section {
+    text-align: center;
+}
+
+.steps-container {
+    margin-top: 50px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 30px;
+}
+
+.step {
+    padding: 20px;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: darkcyan;
+
+    color: white;
+
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.step h3 {
+    color: #111827;
+
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+
+
+.safety-section {
+    background-color: #fff7ed;
+
+    text-align: center;
+}
+
+.safety-content {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+.safety-content > p:not(.section-title) {
+    color: #6b7280;
+
+    margin-bottom: 20px;
+}
+
+.safety-container {
+    margin-top: 35px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.safety-card {
+    padding: 35px 25px;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+
+    transition: 0.3s;
+}
+
+.safety-card:hover {
+    transform: translateY(-7px);
+}
+
+.safety-icon {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.safety-card h3 {
+    color: #111827;
+
+    margin-bottom: 10px;
+}
+
+.safety-card p {
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+
+.cities-section {
+    text-align: center;
+}
+
+.cities-section > p:not(.section-title) {
+    color: #6b7280;
+
+    max-width: 650px;
+
+    margin: auto;
+}
+
+.city-container {
+    margin-top: 35px;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 18px;
+}
+
+.city-card {
+    padding: 18px 10px;
+
+    background-color: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    color: #374151;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.city-card:hover {
+    background-color: darkcyan;
+
+    color: white;
+
+    border-color:darkcyan;
+
+    transform: translateY(-4px);
+}
+
+
+footer {
+    text-align: center;
+    background-color: #0F172A;
+    color: white;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+footer p {
+    margin: 5px;
+    font-size: 14px;
+}
